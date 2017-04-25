@@ -27,7 +27,7 @@ function onClosed () {
 }
 
 function createMainWindow () {
-  var winOptions = {width: 1920, height: 1080}
+  var winOptions = {width: 1366, height: 790}
   if (process.env['NODE_ENV'] !== 'dev') {
     winOptions.kiosk = true
     winOptions.frame = false
@@ -45,7 +45,8 @@ function createMainWindow () {
     directWrite: true
   }
   const win = new electron.BrowserWindow(winOptions)
-
+  win.maximize();
+  //find out why this isnt working
   // if (process.env['NODE_ENV'] === 'dev') {
   //   win.loadURL('http://0.0.0.0:6060/')
   //   win.openDevTools()
